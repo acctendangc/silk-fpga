@@ -190,12 +190,12 @@ module uart_rx #(parameter
     PAYLOAD_BITS = 8,          
     STOP_BITS    = 1           
 ) (
-    input  wire       clk          , 
-    input  wire       resetn       , 
-    input  wire       uart_rxd     , 
-    output reg        uart_rts     , 
-    input  wire       uart_rx_read , 
-    output wire       uart_rx_valid, 
+    input  wire        clk          , 
+    input  wire        resetn       , 
+    input  wire        uart_rxd     , 
+    output reg         uart_rts     , 
+    input  wire        uart_rx_read , 
+    output wire        uart_rx_valid, 
     output wire [PAYLOAD_BITS-1:0] uart_rx_data   
 );
     localparam       CYCLES_PER_BIT     = (CLK_HZ - 1) / BIT_RATE;
@@ -216,9 +216,10 @@ module uart_rx #(parameter
     assign uart_rx_valid = fsm_state == FSM_READY;
     assign uart_rx_data = recieved_data;
 
-    wire next_bit     = cycle_counter == CYCLES_PER_BIT[COUNT_REG_LEN-1:0];
-    wire mid_bit      = cycle_counter == CYCLES_PER_BIT[COUNT_REG_LEN-1:0] / 2;
+    wire next_bit      = cycle_counter == CYCLES_PER_BIT[COUNT_REG_LEN-1:0];
+    wire mid_bit       = cycle_counter == CYCLES_PER_BIT[COUNT_REG_LEN-1:0] / 2;
 
+    
     always @(posedge clk) begin : p_fsm_state
         if(!resetn) begin
             fsm_state <= FSM_IDLE;
@@ -253,14 +254,6 @@ module uart_rx #(parameter
             cycle_counter <= {COUNT_REG_LEN{1'b0}};
         end else begin
             cycle_counter <= cycle_counter + 1'b1;
-        end
-    end
-
-    always @(posedge clk) begin : p_fsm_state
-        if(!resetn) begin
-            fsm_state <= FSM_IDLE;
-        end else begin
-            fsm_state <= next_fsm_state();
         end
     end
 
