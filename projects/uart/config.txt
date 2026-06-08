@@ -1,2 +1,2 @@
-TOP_MODULE = uart
+TOP_MODULE = uart_rx
 TB_NAME = //có thể để trống
