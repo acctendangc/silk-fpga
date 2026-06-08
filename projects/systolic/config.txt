@@ -1,3 +1,2 @@
 TOP_MODULE = systolic2x2
-
 TB_NAME = tb_systolic2x2
