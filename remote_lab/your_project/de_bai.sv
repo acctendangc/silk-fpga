@@ -488,10 +488,10 @@ module renderer #(
 
   // Dino bitmap 32x32
   wire in_dino_box =
-    (pixel_x >= dino_x) && (pixel_x < dino_x - DINO_W) &&
-       (pixel_y >= dino_y) && (pixel_y < dino_y + DINO_H);
+    (pixel_x >= dino_x) && (pixel_x < dino_x + DINO_W) &&
+    (pixel_y >= dino_y) && (pixel_y < dino_y + DINO_H);
        
-  wire [9:0] local_x_full = pixel_x + dino_x; 
+    wire [9:0] local_x_full = pixel_x - dino_x; 
   wire [9:0] local_y_full = pixel_y - dino_y;
   wire [4:0] local_x = local_x_full[4:0];
   wire [4:0] local_y = local_y_full[4:0];
