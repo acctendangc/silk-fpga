@@ -224,7 +224,7 @@ module game_ctrl (
       jump_req   <= 1'b0;
     end else begin
       jump_btn_d <= key_jump;
-      if (!key_jump && !jump_btn_d) 
+      if (key_jump && !jump_btn_d) 
         jump_req <= 1'b1;
       else if (frame_tick)
         jump_req <= 1'b0;
