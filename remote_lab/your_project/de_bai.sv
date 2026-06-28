@@ -245,7 +245,7 @@ module game_ctrl (
       if (new_round) begin
         anim_cnt   <= 4'd0;
         dino_frame <= 1'b0;
-      end else if (state == S_IDLE || (S_RUN && on_ground) begin
+      end else if (state == S_IDLE || (S_RUN && on_ground)) begin
         if (anim_cnt == 4'd5) begin
           anim_cnt   <= 4'd0;
           dino_frame <= ~dino_frame;
