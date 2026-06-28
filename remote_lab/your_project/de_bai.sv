@@ -605,7 +605,7 @@ module renderer #(
         5'd28: dino_row_bits = 32'b00111111111111111100000000000000;
         5'd29: dino_row_bits = 32'b00011111111111111000000000000000;
         5'd30: dino_row_bits = 32'b00000111000001110000000000000000;
-        5'd31: dino_row_bits = 32'b00000001111111100000000000000000;
+        5'd31: dino_row_bits = 32'b00000111100001111000000000000000;
         default: dino_row_bits = 32'd0;
       endcase
     end
