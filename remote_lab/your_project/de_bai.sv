@@ -262,7 +262,7 @@ module game_ctrl (
   // FSM Game
   always @(posedge clk) begin
     if (!rst_n) begin
-      state <= S_IDLE;
+      state <= S_RUN;
       score <= 16'd0;
       speed <= 4'd4;
     end else if (frame_tick) begin
