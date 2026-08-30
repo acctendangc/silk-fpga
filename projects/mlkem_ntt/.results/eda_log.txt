@@ -7,9 +7,8 @@
 === 2/4: Đang tổng hợp Netlist và trích xuất FSM ===
 === 3/4: Đang vẽ Schematic và FSM ===
 === 4/4: Đang mô phỏng và tạo sóng ===
-ERROR: rtl/ntt_fsm_rom.v:29: $readmemh: Unable to open twiddle_factors.hex for reading.
 VCD info: dumpfile waveform.vcd opened for output.
-NTT smoke test complete. data_out=x
+NTT smoke test complete. data_out=2215
 tb/tb_ntt_top.v:44: $finish called at 9025000 (1ps)
 ✅ Đã tạo Waveform (.vcd) trong thư mục sim/
 🎉 HOÀN TẤT PIPELINE!
