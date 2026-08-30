@@ -16,9 +16,5 @@
                                                  : ... Suggest add newline.
    25 | endmodule
       |          ^
-%Warning-WIDTHEXPAND: rtl/mod_multiplier.v:33:24: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'c' generates 24 bits.
-                                                : ... note: In instance 'ntt_top.u_butterfly.u_mul'
-   33 |     wire [31:0] t = (c + m * Q);  
-      |                        ^
-%Error: Exiting due to 4 warning(s)
+%Error: Exiting due to 3 warning(s)
 🛑 Hãy đọc kỹ log cảnh báo (Error/Warning) ở trên, sửa lỗi và push lại.
