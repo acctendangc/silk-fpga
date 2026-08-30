@@ -26,7 +26,7 @@ jobs:
           yosys -p "
             read_verilog rtl/*.v;
             hierarchy -check -top ntt_top;
-            synth -top ntt_top;
+            synth -top ntt_top -flatten;
             stat
           " | tee yosys_stat.txt
 
