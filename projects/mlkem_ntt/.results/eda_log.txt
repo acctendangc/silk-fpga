@@ -2,15 +2,14 @@
 ✅ Top Module: ntt_top
 ✅ Testbench: tb_ntt_top
 === 0/4: Đang kiểm tra lỗi cú pháp và logic (Linting) ===
-%Warning-EOFNEWLINE: rtl/nmi_reorder.v:58:21: Missing newline at end of file (POSIX 3.206).
-                                            : ... Suggest add newline.
-   58 | //ch    t   n 48 DFF
-      |                     ^
-                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.020
-                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
-%Warning-EOFNEWLINE: rtl/mod_add_sub_div2.v:25:10: Missing newline at end of file (POSIX 3.206).
-                                                 : ... Suggest add newline.
-   25 | endmodule
-      |          ^
-%Error: Exiting due to 2 warning(s)
-🛑 Hãy đọc kỹ log cảnh báo (Error/Warning) ở trên, sửa lỗi và push lại.
+✅ Code RTL vượt qua Verilator linting.
+=== 1/4: Đang tạo Module Documentation ===
+=== 2/4: Đang tổng hợp Netlist và trích xuất FSM ===
+=== 3/4: Đang vẽ Schematic và FSM ===
+=== 4/4: Đang mô phỏng và tạo sóng ===
+ERROR: rtl/ntt_fsm_rom.v:29: $readmemh: Unable to open twiddle_factors.hex for reading.
+VCD info: dumpfile waveform.vcd opened for output.
+NTT smoke test complete. data_out=x
+tb/tb_ntt_top.v:44: $finish called at 9025000 (1ps)
+✅ Đã tạo Waveform (.vcd) trong thư mục sim/
+🎉 HOÀN TẤT PIPELINE!
