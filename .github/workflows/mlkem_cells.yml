@@ -1,0 +1,38 @@
+name: MLKEM Cell Count
+
+on:
+  push:
+    paths:
+      - 'projects/mlkem_ntt/**'
+  workflow_dispatch:
+
+jobs:
+  count_cells:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Yosys
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y yosys
+
+      - name: Synthesize MLKEM NTT
+        run: |
+          cd projects/mlkem_ntt
+
+          yosys -p "
+            read_verilog rtl/*.v;
+            hierarchy -check -top ntt_top;
+            synth -top ntt_top;
+            stat
+          " | tee yosys_stat.txt
+
+      - name: Show cell count
+        run: |
+          cd projects/mlkem_ntt
+          echo "========== CELL COUNT =========="
+          grep -A30 "=== ntt_top ===" yosys_stat.txt | tail -35
+          echo "==============================="
