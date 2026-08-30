@@ -1,5 +1,4 @@
 === BẮT ĐẦU SILK-EDA ===
 ✅ Top Module: ntt_top
 ✅ Testbench: tb_ntt_top
-find: 'rtl': No such file or directory
 ❌ LỖI: Không tìm thấy file RTL nào trong thư mục rtl/
