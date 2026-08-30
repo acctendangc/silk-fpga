@@ -1,2 +1,0 @@
-TOP_MODULE = ntt_top
-TB_NAME = tb_ntt_top
