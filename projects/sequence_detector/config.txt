@@ -1,2 +1,0 @@
-TOP_MODULE = sequence_detector
-TB_NAME = //có thể để trống
