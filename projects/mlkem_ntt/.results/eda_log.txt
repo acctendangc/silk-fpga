@@ -1,4 +1,24 @@
 === BẮT ĐẦU SILK-EDA ===
 ✅ Top Module: ntt_top
 ✅ Testbench: tb_ntt_top
-❌ LỖI: Không tìm thấy file RTL nào trong thư mục rtl/
+=== 0/4: Đang kiểm tra lỗi cú pháp và logic (Linting) ===
+%Warning-EOFNEWLINE: rtl/single_butterfly.v:73:5: Missing newline at end of file (POSIX 3.206).
+                                                : ... Suggest add newline.
+   73 |     
+      |     ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.020
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Warning-EOFNEWLINE: rtl/nmi_reorder.v:58:21: Missing newline at end of file (POSIX 3.206).
+                                            : ... Suggest add newline.
+   58 | //ch    t   n 48 DFF
+      |                     ^
+%Warning-EOFNEWLINE: rtl/mod_add_sub_div2.v:25:10: Missing newline at end of file (POSIX 3.206).
+                                                 : ... Suggest add newline.
+   25 | endmodule
+      |          ^
+%Warning-WIDTHEXPAND: rtl/mod_multiplier.v:33:24: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'c' generates 24 bits.
+                                                : ... note: In instance 'ntt_top.u_butterfly.u_mul'
+   33 |     wire [31:0] t = (c + m * Q);  
+      |                        ^
+%Error: Exiting due to 4 warning(s)
+🛑 Hãy đọc kỹ log cảnh báo (Error/Warning) ở trên, sửa lỗi và push lại.
