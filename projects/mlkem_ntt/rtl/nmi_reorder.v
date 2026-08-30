@@ -54,5 +54,3 @@ module nmi_reorder (
         endcase
     end
 endmodule
-            
-//chỉ tốn 48 DFF
