@@ -69,5 +69,3 @@ module single_butterfly (
     assign out_y0 = mode ? div2_ff2 : post_add_res; //lấy thẳng div2_ff2 mà không lấy post_div2_res vì mod_multiplier đã cấu hình cho đầu ra khối div2 là (a + b) / 2
     assign out_y1 = mode ? mul_out : post_sub_res;
 endmodule
-
-    
