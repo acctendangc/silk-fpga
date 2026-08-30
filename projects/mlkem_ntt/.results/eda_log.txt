@@ -2,19 +2,15 @@
 ✅ Top Module: ntt_top
 ✅ Testbench: tb_ntt_top
 === 0/4: Đang kiểm tra lỗi cú pháp và logic (Linting) ===
-%Warning-EOFNEWLINE: rtl/single_butterfly.v:73:5: Missing newline at end of file (POSIX 3.206).
-                                                : ... Suggest add newline.
-   73 |     
-      |     ^
-                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.020
-                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
 %Warning-EOFNEWLINE: rtl/nmi_reorder.v:58:21: Missing newline at end of file (POSIX 3.206).
                                             : ... Suggest add newline.
    58 | //ch    t   n 48 DFF
       |                     ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.020
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
 %Warning-EOFNEWLINE: rtl/mod_add_sub_div2.v:25:10: Missing newline at end of file (POSIX 3.206).
                                                  : ... Suggest add newline.
    25 | endmodule
       |          ^
-%Error: Exiting due to 3 warning(s)
+%Error: Exiting due to 2 warning(s)
 🛑 Hãy đọc kỹ log cảnh báo (Error/Warning) ở trên, sửa lỗi và push lại.
