@@ -27,7 +27,8 @@ jobs:
             read_verilog rtl/*.v;
             hierarchy -check -top ntt_top;
             synth -top ntt_top -flatten;
-            stat
+            stat;
+            show -format svg -prefix ntt_schematic ntt_top
           " | tee yosys_stat.txt
 
       - name: Show cell count
