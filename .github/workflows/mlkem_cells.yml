@@ -27,9 +27,7 @@ jobs:
             read_verilog rtl/*.v;
             hierarchy -check -top ntt_top;
             synth -top ntt_top -flatten;
-            proc;
-            opt;
-            show -format svg -prefix ntt_schematic ntt_top
+            stat;
           " | tee yosys_stat.txt
 
       - name: Show cell count
@@ -38,3 +36,20 @@ jobs:
           echo "========== CELL COUNT =========="
           grep -A30 "=== ntt_top ===" yosys_stat.txt | tail -35
           echo "==============================="
+
+      - name: Generate hierarchical schematic
+        run: |
+          cd projects/mlkem_ntt
+
+          yosys -p "
+            read_verilog rtl/*.v;
+            hierarchy -check -top ntt_top;
+            proc;
+            opt;
+            show -format svg -prefix ntt_schematic ntt_top;
+          "
+      - name: Upload schematic
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlkem-ntt-schematic
+          path: projects/mlkem_ntt/ntt_schematic.svg
